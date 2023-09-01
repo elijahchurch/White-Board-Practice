@@ -26,3 +26,14 @@ function urlReplacer2(string) {
     }
     return newString
 };
+
+//Array Deduping without recursion
+function arrayDedupe(array) {
+    let resultArray = [];
+    array.forEach( (element) => {
+       if(!resultArray.includes(element)){
+        resultArray.push(element);
+       }
+    })
+    return resultArray;
+}
