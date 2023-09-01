@@ -37,3 +37,24 @@ function arrayDedupe(array) {
     })
     return resultArray;
 }
+
+//Array deduping with Filer
+function arrayDedupe2(array) {
+    return array.filter((element, index) => array.indexOf(element) === index);
+}
+
+
+// uniqueChecker 
+function uniquechecker(string) {
+    if(string.length === 1)
+    {
+        return true;
+    }
+    let chara = string[0];
+    let checkString = string.substring[1];
+    if(checkString.indexOf(chara) !== -1)
+        {
+            return false;
+        }
+    return uniquechecker(checkString);
+}
