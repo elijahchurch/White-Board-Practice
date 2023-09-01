@@ -51,10 +51,34 @@ function uniquechecker(string) {
         return true;
     }
     let chara = string[0];
-    let checkString = string.substring[1];
+    let checkString = string.substring(1);
     if(checkString.indexOf(chara) !== -1)
         {
             return false;
         }
     return uniquechecker(checkString);
 }
+
+//Compress strings with recursion
+function stringCompress(string) {
+    if(string.length === 1) {
+        return string;
+    }
+    else {
+        const chara = string[0];
+        if(chara !== string[1]) {
+            return chara + stringCompress(string.substring(1))
+        } 
+        else {
+            let count = 1;
+            for(let i = 1; i < string.length ; i ++) {
+                if(chara === string[i])
+                count ++;
+                else {
+                    return `${count}${chara}` + stringCompress(string.substring(i))
+                }
+            }
+            return `${count}${chara}`;
+        }
+    }
+};
