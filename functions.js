@@ -38,7 +38,7 @@ function arrayDedupe(array) {
     return resultArray;
 }
 
-//Array deduping with Filer
+//Array deduping with Filter
 function arrayDedupe2(array) {
     return array.filter((element, index) => array.indexOf(element) === index);
 }
